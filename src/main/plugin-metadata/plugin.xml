@@ -1,0 +1,10 @@
+<plugin>
+    <name>${project.name}</name>
+    <version>${project.version}</version>
+    <description>${project.description}</description>
+    <author>Guus der Kinderen</author>
+    <homePage>https://www.igniterealtime.org/projects/spark/</homePage>
+    <class>org.igniterealtime.spark.plugin.jxbrowser.JxBrowserPlugin</class>
+    <minSparkVersion>2.0.0</minSparkVersion>
+    <java>1.8.0</java>
+</plugin>

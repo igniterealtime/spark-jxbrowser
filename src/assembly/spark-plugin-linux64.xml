@@ -1,0 +1,34 @@
+<assembly xmlns="http://maven.apache.org/ASSEMBLY/2.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/ASSEMBLY/2.0.0 http://maven.apache.org/xsd/assembly-2.0.0.xsd">
+    <id>linux64</id>
+    <formats>
+        <format>jar</format>
+    </formats>
+    <includeBaseDirectory>false</includeBaseDirectory>
+    <dependencySets>
+        <dependencySet>
+            <useProjectArtifact>true</useProjectArtifact>
+            <outputDirectory>lib/</outputDirectory>
+            <excludes>
+                <exclude>com.teamdev.jxbrowser:jxbrowser-linux32</exclude>
+                <exclude>com.teamdev.jxbrowser:jxbrowser-mac</exclude>
+                <exclude>com.teamdev.jxbrowser:jxbrowser-win</exclude>
+            </excludes>
+        </dependencySet>
+    </dependencySets>
+
+    <files>
+        <file>
+            <!-- The outputDirectory will have the 'filtered' resources, which is why that is used, instead of the original source directory. -->
+            <source>${project.build.outputDirectory}/plugin.xml</source>
+        </file>
+    </files>
+
+    <fileSets>
+        <fileSet>
+            <directory>${project.basedir}/src/main/native/</directory>
+            <outputDirectory>native</outputDirectory>
+        </fileSet>
+    </fileSets>
+</assembly>
